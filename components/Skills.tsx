@@ -2,7 +2,7 @@
 import React from 'react';
 import { SKILLS } from '../constants';
 
-const Skills: React.FC = () => {
+const Skills = () => {
   return (
     <section id="skills" className="py-5 bg-light">
       <div className="container py-lg-5">

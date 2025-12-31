@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../constants';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
+  const [status, setStatus] = useState('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('sending');
     setTimeout(() => {

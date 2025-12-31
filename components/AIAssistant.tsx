@@ -3,19 +3,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import { getAIAssistantResponse } from '../services/geminiService';
 import { PERSONAL_INFO } from '../constants';
 
-interface Message {
-  role: 'user' | 'assistant';
-  text: string;
-}
-
-const AIAssistant: React.FC = () => {
+const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
+  const [messages, setMessages] = useState([
     { role: 'assistant', text: `Hi! I'm ${PERSONAL_INFO.name.split(' ')[0]}'s AI assistant. Ask me anything about my experience!` }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatEndRef = useRef(null);
 
   const scrollToBottom = () => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -25,7 +20,7 @@ const AIAssistant: React.FC = () => {
     scrollToBottom();
   }, [messages, isLoading]);
 
-  const handleSend = async (e?: React.FormEvent) => {
+  const handleSend = async (e) => {
     e?.preventDefault();
     if (!input.trim() || isLoading) return;
 
@@ -35,11 +30,11 @@ const AIAssistant: React.FC = () => {
     setIsLoading(true);
 
     const history = messages.map(m => ({
-      role: m.role === 'assistant' ? 'model' : 'user' as 'model' | 'user',
+      role: m.role === 'assistant' ? 'model' : 'user',
       parts: [{ text: m.text }]
     }));
 
-    const aiResponse = await getAIAssistantResponse(userText, history as any);
+    const aiResponse = await getAIAssistantResponse(userText, history);
     
     setMessages(prev => [...prev, { role: 'assistant', text: aiResponse }]);
     setIsLoading(false);

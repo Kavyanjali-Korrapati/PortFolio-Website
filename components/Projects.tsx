@@ -2,7 +2,7 @@
 import React from 'react';
 import { PROJECTS } from '../constants';
 
-const ProjectIcon = ({ id }: { id: number }) => {
+const ProjectIcon = ({ id }) => {
   const icons = [
     { icon: 'fa-cart-shopping', color: '#6366f1' },
     { icon: 'fa-chart-pie', color: '#a855f7' },
@@ -16,7 +16,7 @@ const ProjectIcon = ({ id }: { id: number }) => {
   );
 };
 
-const Projects: React.FC = () => {
+const Projects = () => {
   return (
     <section id="projects" className="py-5 bg-white">
       <div className="container py-lg-5">

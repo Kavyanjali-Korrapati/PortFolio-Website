@@ -2,7 +2,7 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../constants';
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <section id="about" className="py-5 bg-white">
       <div className="container py-lg-5">

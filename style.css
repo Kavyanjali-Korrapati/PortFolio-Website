@@ -14,12 +14,64 @@ body {
     background-color: #fcfcfd;
 }
 
+/* Global Transitions */
+a, button, .card, i, .nav-link {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Buttons Hover Effects */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Nav Link Hover */
+.navbar-custom .nav-link {
+    position: relative;
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.navbar-custom .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-custom .nav-link:hover::after {
+    width: 20px;
+}
+
+/* Card Hover */
 .hover-up {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-up:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Glassmorphism Navbar */
@@ -57,9 +109,19 @@ body {
 }
 
 /* Skill Icons */
-.skill-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
+.skill-card {
+    border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.1) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.skill-card:hover i {
+    transform: scale(1.1);
+    color: var(--accent-color);
 }
 
 /* Project Card Tweaks */
@@ -71,6 +133,10 @@ body {
     transform: translateY(-12px);
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.08) !important;
     border-color: var(--primary-color) !important;
+}
+
+.project-card:hover .fa-solid {
+    transform: scale(1.15) rotate(5deg);
 }
 
 /* AI Assistant Styles */
@@ -90,14 +156,15 @@ body {
     justify-content: center;
     font-size: 1.5rem;
     box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
-    transition: transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: none;
     background: var(--primary-color);
     color: white;
 }
 
 .chat-trigger:hover {
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.15) rotate(12deg);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.6);
 }
 
 .chat-window {
@@ -159,4 +226,19 @@ body {
     background: #10b981;
     border-radius: 50%;
     display: inline-block;
+}
+
+/* Footer Icons */
+footer a i {
+    transition: transform 0.3s ease;
+}
+
+footer a:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+footer a.btn-outline-dark:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
 }

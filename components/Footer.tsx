@@ -2,7 +2,7 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../constants';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="py-5 bg-white border-top mt-auto">
       <div className="container">

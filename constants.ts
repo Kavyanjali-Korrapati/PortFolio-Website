@@ -1,14 +1,12 @@
 
-import { Project, Skill, NavLink } from './types';
-
-export const NAV_LINKS: NavLink[] = [
+export const NAV_LINKS = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];
 
-export const SKILLS: Skill[] = [
+export const SKILLS = [
   { name: 'React.js', icon: 'fa-brands fa-react', category: 'Frontend' },
   { name: 'JavaScript', icon: 'fa-brands fa-js', category: 'Frontend' },
   { name: 'HTML5 & CSS3', icon: 'fa-brands fa-html5', category: 'Frontend' },
@@ -19,12 +17,11 @@ export const SKILLS: Skill[] = [
   { name: 'TypeScript', icon: 'fa-solid fa-code', category: 'Frontend' },
 ];
 
-export const PROJECTS: Project[] = [
+export const PROJECTS = [
   {
     id: 1,
     title: 'E-Commerce Website',
     description: 'A full-stack shopping application built with React, Node.js, and MongoDB. Includes a working shopping cart and user authentication.',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800&auto=format&fit=crop',
     tech: ['React', 'Node.js', 'MongoDB', 'Express'],
     github: '#',
     demo: '#',
@@ -33,7 +30,6 @@ export const PROJECTS: Project[] = [
     id: 2,
     title: 'Social Media Dashboard',
     description: 'A responsive dashboard that tracks social media analytics across multiple platforms with interactive charts.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
     tech: ['React', 'Chart.js', 'CSS3'],
     github: '#',
   },
@@ -41,7 +37,6 @@ export const PROJECTS: Project[] = [
     id: 3,
     title: 'Task Management App',
     description: 'A simple and effective task manager to help users organize their daily goals and collaborate with teams.',
-    image: 'https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=800&auto=format&fit=crop',
     tech: ['React', 'Redux', 'Firebase'],
     github: '#',
   },

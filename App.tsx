@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIAssistant from './components/AIAssistant';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className="app-root">
       <Navbar />

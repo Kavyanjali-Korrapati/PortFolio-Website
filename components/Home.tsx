@@ -2,7 +2,7 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../constants';
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <header id="home" className="hero-section">
       <div className="container">

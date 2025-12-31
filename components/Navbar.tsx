@@ -2,7 +2,7 @@
 import React from 'react';
 import { NAV_LINKS, PERSONAL_INFO } from '../constants';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light sticky-top navbar-custom py-3">
       <div className="container">

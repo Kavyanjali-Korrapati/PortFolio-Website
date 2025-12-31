@@ -21,12 +21,12 @@ RULES:
 4. Keep answers under 3 sentences unless asked for detail.
 `;
 
-export const getAIAssistantResponse = async (userMessage: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) => {
+export const getAIAssistantResponse = async (userMessage, history) => {
   try {
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: [
-        ...history.map(h => ({ role: h.role === 'model' ? 'model' : 'user' as any, parts: h.parts })),
+        ...history.map(h => ({ role: h.role === 'model' ? 'model' : 'user', parts: h.parts })),
         { role: 'user', parts: [{ text: userMessage }] }
       ],
       config: {
